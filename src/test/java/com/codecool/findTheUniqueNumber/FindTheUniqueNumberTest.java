@@ -19,7 +19,7 @@ public class FindTheUniqueNumberTest {
                 arguments(1, new double[] {0, 0, 0, 0, 1}),
                 arguments(2, new double[] {2, 0, 0, 0, 0}),
                 arguments(3, new double[] {0, 0, 3, 0, 0}),
-                arguments(0.55, new double[]{ 0, 0, 0.55, 0, 0 }),
+                arguments(0.55, new double[] { 0, 0, 0.55, 0, 0 }),
                 arguments(1.0, new double[] {0.0, 1.0, 0.0}),
                 arguments(3.0, new double[] {4.0, 4.0, 4.0, 3.0, 4.0, 4.0, 4.0, 4.0}),
                 arguments(1.099511627776E12, new double[] {1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.099511627776E12, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15, 1.125899906842624E15})
@@ -28,11 +28,11 @@ public class FindTheUniqueNumberTest {
 
     private static Stream<Arguments> getExceptions() {
         return Stream.of(
-                arguments(new double[] {}),
-                arguments(new double[] {1}),
-                arguments(new double[] {2, 0}),
-                arguments(new double[] {0, 0, 0, 0, 0}),
-                arguments(new double[] {1.0, 1.0, 1.0, 1.0, 1.0})
+                arguments(IllegalArgumentException.class, new double[] {}),
+                arguments(IllegalArgumentException.class, new double[] {1}),
+                arguments(IllegalArgumentException.class, new double[] {2, 0}),
+                arguments(IllegalArgumentException.class, new double[] {0, 0, 0, 0, 0}),
+                arguments(IllegalArgumentException.class, new double[] {1.0, 1.0, 1.0, 1.0, 1.0})
         );
     }
 
@@ -40,12 +40,14 @@ public class FindTheUniqueNumberTest {
     @MethodSource("getTestCases")
     public void findUniqueNumberTest(double result, double[] numbers) {
         assertEquals(result, finder.findUniqueNumber(numbers));
+        assertEquals(result, finder.findUniqueNumber_old(numbers));
     }
 
     @ParameterizedTest
     @MethodSource("getExceptions")
-    public void findUniqueNumberTestExceptions(double[] numbers) {
-        assertThrows(IllegalArgumentException.class, () -> finder.findUniqueNumber(numbers));
+    public void findUniqueNumberTestExceptions(Class<Exception> exception, double[] numbers) {
+        assertThrows(exception, () -> finder.findUniqueNumber(numbers));
+        assertThrows(exception, () -> finder.findUniqueNumber_old(numbers));
     }
 
 }
