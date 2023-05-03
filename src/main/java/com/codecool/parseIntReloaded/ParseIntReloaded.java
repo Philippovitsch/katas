@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ParseIntReloaded {
 
-    // https://www.codewars.com/kata/525c7c5ab6aecef16e0001a5/train/java
+    // Source: https://www.codewars.com/kata/525c7c5ab6aecef16e0001a5/train/java
 
     public int parseToInt(String numberWord) {
         String[] splitNumberWords = splitWord(numberWord, " ");

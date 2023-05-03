@@ -7,7 +7,7 @@ import java.util.List;
 
 public class StopSpinningMyWords {
 
-    // https://www.codewars.com/kata/5264d2b162488dc400000001/train/java
+    // Source: https://www.codewars.com/kata/5264d2b162488dc400000001/train/java
 
     private final int minWordSize = 5;
 

@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class SpaghettiCode1 {
 
+    // Source: https://www.codewars.com/kata/57d7805cec167081a50014ac
+
     private final int letterA = 65;
     private final int letterZ = 90;
 

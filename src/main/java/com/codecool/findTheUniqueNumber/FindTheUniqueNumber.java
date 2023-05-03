@@ -9,6 +9,8 @@ import static java.util.stream.Collectors.groupingBy;
 
 public class FindTheUniqueNumber {
 
+    // Source: https://www.codewars.com/kata/585d7d5adb20cf33cb000235
+
     public double findUniqueNumber(double[] numbers) {
         if (numbers.length < 3) {
             throw new IllegalArgumentException("Array is too short!");

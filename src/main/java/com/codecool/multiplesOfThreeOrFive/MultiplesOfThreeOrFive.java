@@ -4,6 +4,8 @@ import java.util.stream.IntStream;
 
 public class MultiplesOfThreeOrFive {
 
+    // Source: https://www.codewars.com/kata/514b92a657cdc65150000006
+
     private final int FIRST_DIVISOR = 3;
     private final int SECOND_DIVISOR = 5;
 

@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 public class SumStringsAsNumbers {
 
+    // Source: https://www.codewars.com/kata/5324945e2ece5e1f32000370
+
     public String calculateSum(String number1, String number2) {
         int maxLength = Math.max(number1.length(), number2.length());
         String reversedNumber1 = reverseNumber(number1);

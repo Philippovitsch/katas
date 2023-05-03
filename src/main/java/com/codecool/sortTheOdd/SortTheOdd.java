@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SortTheOdd {
 
-    // https://www.codewars.com/kata/578aa45ee9fd15ff4600090d
+    // Source: https://www.codewars.com/kata/578aa45ee9fd15ff4600090d
 
     public Integer[] sort(Integer[] numbers) {
         Integer[] result = new Integer[numbers.length];
