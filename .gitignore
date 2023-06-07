@@ -1,2 +1,14 @@
+# Configuration
 .idea
+.vscode
+
+# Java
 target
+
+# JavaScript
+node_modules
+package-lock.json
+
+# Python
+.pytest_cache
+__pycache__
